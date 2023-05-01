@@ -18,12 +18,7 @@
                             </button>
                         </form>
                     </div><!-- /.col -->
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v1</li>
-                        </ol>
-                    </div><!-- /.col -->
+
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
@@ -54,10 +49,7 @@
                                         <td>{{$post->title}}</td>
                                     </tr>
 
-                                    <tr>
-                                        <td>Текст</td>
-                                        <td>{{$post->content}}</td>
-                                    </tr>
+
 
                                     </tbody>
                                 </table>
@@ -66,11 +58,30 @@
                         </div>
                     </div>
                 </div>
+
+
+
                 <div class="row">
                     <div class="col-6 ">
-                        <div class="card pl-3 pt-2 pb-2">
+
+                        <div class="card pl-4 pt-3 pb-3">
+                            <h3 class="card-title ml-0 pb-3">Текст</h3>
                             {!! $post->content !!}
                         </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+
+                        <div class="card pl-4 pt-3 pb-3">
+                            <h3 class="card-title ml-0 pb-3">Изображение</h3>
+
+                        <div class="form-group w-10">
+                            <img src="{{$post->main_image}}" alt="main_image" class="w-50">
+                        </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
                 <!-- /.row -->
