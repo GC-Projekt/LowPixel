@@ -41,7 +41,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Название</th>
-                                        <th>Действия</th>
+                                        <th colspan="2" class="text-center">Действия</th>
 
                                     </tr>
                                     </thead>
@@ -51,6 +51,7 @@
                                             <td>{{$post->id}}</td>
                                             <td>{{$post->title}}</td>
                                             <td><a href="{{route('admin.post.show', $post->id)}}" ><i class="far fa-eye"></i> </a> </td>
+                                            <td><a href="{{route('admin.post.edit', $post->id)}}" ><i class="fas fa-pencil-alt"></i> </a> </td>
 
                                         </tr>
                                     @endforeach
