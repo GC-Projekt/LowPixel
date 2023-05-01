@@ -15,8 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::prefix('admin')->namespace('App\Http\Controllers\Admin\Post')->name('admin.')->group(function() {
-    Route::get('/post', 'IndexController')->name('post.index');
+Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin.')->group(function() {
+
+    Route::namespace('Main')->group(function() {
+        Route::get('/', 'IndexController')->name('main.index');
+    });
+
+    Route::prefix('posts')->namespace('Post')->group(function() {
+        Route::get('/', 'IndexController')->name('post.index');
+    });
+    /*Route::get('/post', 'IndexController')->name('post.index');*/
 });
 
 Route::get('/', function () {
