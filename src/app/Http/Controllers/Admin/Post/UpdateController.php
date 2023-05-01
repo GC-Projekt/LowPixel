@@ -15,7 +15,7 @@ class UpdateController extends Controller
         {
             $data['main_image'] = Storage::put('/images', $data['main_image']);
         }
-        
+
         $post->update($data);
 
         return view('admin.post.show', compact('post'));

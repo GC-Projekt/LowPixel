@@ -67,8 +67,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
-                        <div class="card">
+                    <div class="col-6 ">
+                        <div class="card pl-3 pt-2 pb-2">
                             {!! $post->content !!}
                         </div>
                     </div>
