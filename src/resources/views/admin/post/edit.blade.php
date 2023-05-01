@@ -22,10 +22,11 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-12">
-                        <form action="{{route('admin.post.update', $post->id)}}" method="POST" enctype="multipart/form-data" >
+                        <form action="{{route('admin.post.update', $post->id)}}" method="POST"
+                              enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
-                            <div class="form-group w-25" >
+                            <div class="form-group w-25">
                                 <input type="text" class="form-control" name="title" placeholder="Название поста"
                                        value="{{$post->title}}">
                                 @error('title')
@@ -40,9 +41,11 @@
                             </div>
                             <div class="form-group w-50">
                                 <label for="exampleInputFile">Добавить изображение</label>
-                                <div class="form-group w-50">
-                                    <img src="{{$post->main_image}}" alt="main_image" class="w-50">
-                                </div>
+                                @if($post->main_image)
+                                    <div class="form-group w-50">
+                                        <img src="{{$post->main_image}}" alt="main_image" class="w-50">
+                                    </div>
+                                @endif
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" name="main_image">

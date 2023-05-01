@@ -9,7 +9,8 @@
                 <div class="row mb-2">
                     <div class="col-sm-6 d-flex align-items-center">
                         <h1 class="m-0 mr-2">{{$post->title}}</h1>
-                        <a href="{{route('admin.post.edit', $post->id)}}" class="text-success" ><i class="fas fa-pencil-alt"></i> </a>
+                        <a href="{{route('admin.post.edit', $post->id)}}" class="text-success"><i
+                                class="fas fa-pencil-alt"></i> </a>
                         <form action="{{route('admin.post.delete', $post->id)}}" method="POST">
                             @csrf
                             @method('DELETE')
@@ -50,7 +51,6 @@
                                     </tr>
 
 
-
                                     </tbody>
                                 </table>
                             </div>
@@ -58,7 +58,6 @@
                         </div>
                     </div>
                 </div>
-
 
 
                 <div class="row">
@@ -70,24 +69,25 @@
                         </div>
                     </div>
                 </div>
-
+                @if($post->main_image)
                 <div class="row">
                     <div class="col-6">
 
                         <div class="card pl-4 pt-3 pb-3">
                             <h3 class="card-title ml-0 pb-3">Изображение</h3>
 
-                        <div class="form-group w-10">
-                            <img src="{{$post->main_image}}" alt="main_image" class="w-50">
+                            <div class="form-group w-10">
+                                <img src="{{$post->main_image}}" alt="main_image" class="w-50">
+                            </div>
                         </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
-                <!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
+                @endif
+            </div>
+            <!-- /.row -->
+    </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 
