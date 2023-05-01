@@ -11,7 +11,11 @@ class UpdateController extends Controller
 {
     public function __invoke(UpdateRequest $request, Post $post) {
         $data = $request->validated();
-        $data['main_image'] = Storage::put('/images', $data['main_image']);
+        if ($request->files->has('main_image'))
+        {
+            $data['main_image'] = Storage::put('/images', $data['main_image']);
+        }
+        
         $post->update($data);
 
         return view('admin.post.show', compact('post'));
