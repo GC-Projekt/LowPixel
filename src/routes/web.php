@@ -23,6 +23,8 @@ Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin.')-
 
     Route::prefix('posts')->namespace('Post')->group(function() {
         Route::get('/', 'IndexController')->name('post.index');
+        Route::get('/create', 'CreateController')->name('post.create');
+        Route::post('/', 'StoreController')->name('post.store');
     });
     /*Route::get('/post', 'IndexController')->name('post.index');*/
 });
