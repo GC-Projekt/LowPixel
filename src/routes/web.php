@@ -25,6 +25,7 @@ Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin.')-
         Route::get('/', 'IndexController')->name('post.index');
         Route::get('/create', 'CreateController')->name('post.create');
         Route::post('/', 'StoreController')->name('post.store');
+        Route::get('/{post}', 'ShowController')->name('post.show');
     });
     /*Route::get('/post', 'IndexController')->name('post.index');*/
 });
