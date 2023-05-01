@@ -27,6 +27,7 @@ Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin.')-
         Route::post('/', 'StoreController')->name('post.store');
         Route::get('/{post}', 'ShowController')->name('post.show');
         Route::get('/{post}/edit', 'EditController')->name('post.edit');
+        Route::patch('/{post}', 'UpdateController')->name('post.update');
     });
     /*Route::get('/post', 'IndexController')->name('post.index');*/
 });
