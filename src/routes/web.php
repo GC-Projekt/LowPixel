@@ -30,7 +30,14 @@ Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin.')-
         Route::patch('/{post}', 'UpdateController')->name('post.update');
         Route::delete('/{post}', 'DeleteController')->name('post.delete');
     });
-    /*Route::get('/post', 'IndexController')->name('post.index');*/
+
+    Route::prefix('users')->namespace('User')->group(function() {
+        Route::get('/', 'IndexController')->name('user.index');
+        Route::post('/', 'StoreController')->name('user.store');
+
+
+    });
+
 });
 
 Route::get('/', function () {
