@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin.')->group(function() {
+Route::prefix('admin')->namespace('App\Http\Controllers\Admin')
+    ->name('admin.')->middleware(['auth','admin'])->group(function() {
 
     Route::namespace('Main')->group(function() {
         Route::get('/', 'IndexController')->name('main.index');
