@@ -13,8 +13,12 @@ class StoreController extends Controller
 {
     public function __invoke(StoreRequest $request) {
         $data = $request->validated();
-        $data['password'] = Hash::make($data['password']);
-        User::firstOrCreate($data);
+
+        $user = new User([
+            'name' => $data['name'],
+            'password' => Hash::make($data['password']),
+            'role' => User::ROLE_ADMIN,
+        ]);
         return redirect()->route('admin.user.index');
     }
 }

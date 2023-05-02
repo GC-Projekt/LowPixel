@@ -30,28 +30,42 @@
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
-        <div class="col-12 d-flex justify-content-between">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <form action="{{route('logout')}}" method="post">
-                        @csrf
-                        <input class="btn btn-outline-primary" type="submit" value="Выйти">
-                    </form>
-                </li>
-            </ul>
-        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+        </ul>
+
 
     </nav>
     <!-- /.navbar -->
 
-    @include('includes.admin.sidebar')
+    <div class="row text-center">
+        <div class="col-4">
+            <form method="POST" action="{{ route('signin') }}">
+                @csrf
 
-    @yield('content')
+                <div>
+                    <label for="name">{{ __('Name') }}</label>
+                    <input id="name" type="text" name="name" value="{{ old('name') }}" required autofocus>
+                </div>
+
+                <div>
+                    <label for="password">{{ __('Password') }}</label>
+                    <input id="password" type="password" name="password" required>
+                </div>
+
+
+                <div>
+                    <button type="submit">
+                        {{ __('Login') }}
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
 
     <footer class="main-footer">
         <strong>GC-PROJEKT</strong>

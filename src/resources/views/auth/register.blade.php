@@ -6,8 +6,7 @@
     <title>AdminLTE 3 | Dashboard</title>
     <base href="{{ asset('/') }}">
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
@@ -30,28 +29,45 @@
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
-        <div class="col-12 d-flex justify-content-between">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <form action="{{route('logout')}}" method="post">
-                        @csrf
-                        <input class="btn btn-outline-primary" type="submit" value="Выйти">
-                    </form>
-                </li>
-            </ul>
-        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+        </ul>
+
 
     </nav>
     <!-- /.navbar -->
 
-    @include('includes.admin.sidebar')
 
-    @yield('content')
+
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
+
+        <div>
+            <label for="name">{{ __('Name') }}</label>
+            <input id="name" type="text" name="name" value="{{ old('name') }}" required autofocus>
+        </div>
+
+
+        <div>
+            <label for="password">{{ __('Password') }}</label>
+            <input id="password" type="password" name="password" required>
+        </div>
+
+        <div>
+            <label for="password-confirm">{{ __('Confirm Password') }}</label>
+            <input id="password-confirm" type="password" name="password_confirmation" required>
+        </div>
+
+        <div>
+            <button type="submit">
+                {{ __('Register') }}
+            </button>
+        </div>
+    </form>
+
+
 
     <footer class="main-footer">
         <strong>GC-PROJEKT</strong>
@@ -84,7 +100,7 @@
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.js"></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#summernote').summernote({
             toolbar: [
                 // [groupName, [list of button]]
@@ -103,7 +119,7 @@
 </script>
 
 <style>
-    .custom-file-input:lang(en) ~ .custom-file-label::after {
+    .custom-file-input:lang(en)~.custom-file-label::after {
         content: "...";
     }
 </style>
