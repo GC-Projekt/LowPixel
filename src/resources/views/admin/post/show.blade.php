@@ -70,24 +70,26 @@
                     </div>
                 </div>
                 @if($post->main_image)
-                <div class="row">
-                    <div class="col-6">
+                    <div class="row">
+                        <div class="col-6">
 
-                        <div class="card pl-4 pt-3 pb-3">
-                            <h3 class="card-title ml-0 pb-3">Изображение</h3>
+                            <div class="card pl-4 pt-3 pb-3">
+                                <h3 class="card-title ml-0 pb-3">Изображение</h3>
 
-                            <div class="form-group w-10">
-                                <img src="{{$post->main_image}}" alt="main_image" class="w-50">
+                                <div class="form-group w-10">
+                                    <img src="{{$post->main_image}}" alt="main_image" class="w-50">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endif
             </div>
             <!-- /.row -->
+        </section>
     </div><!-- /.container-fluid -->
-    </section>
+
     <!-- /.content -->
+
     </div>
     <!-- /.content-wrapper -->
 
