@@ -15,6 +15,14 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
+                <li class="nav-item">
+                    <a href="{{route('main')}}" class="nav-link">
+                        <i class="nav-icon far fa-solid fa-bars"></i>
+                        <p>
+                            На главную
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-header">РАЗДЕЛЫ</li>
 
                 <li class="nav-item">
@@ -33,6 +41,7 @@
                         </p>
                     </a>
                 </li>
+
 
 
             </ul>

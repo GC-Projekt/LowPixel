@@ -1,0 +1,261 @@
+
+.text{
+    font-family: 'Raleway';
+    font-style: normal;
+    color: white;
+}
+h1{
+
+    font-weight: 600;
+    font-size: 96px;
+    line-height: 113px;
+}
+
+h2{
+
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+}
+
+h3{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.wrapper{
+    width: 60%;
+    margin: auto;
+}
+
+.title{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.navbar-expand-lg{
+    height: 80px;
+}
+/* mainBlock */
+
+.mainWrapper{
+
+}
+.mainBlock{
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    }
+
+
+.mainTitles{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* navbar */
+.navbar .container{
+    width: 60%!important;
+    padding-left: 0;
+    padding-right: 0;
+
+}
+.navbar-brand img{
+    width: 160px;
+}
+
+
+/* serversBLock */
+
+.serversBLock{
+    /* background-image: url(main_bg.png   );
+    background-repeat: no-repeat;
+    background-position: center center; */
+    min-height: 85vh;
+}
+
+
+.serversBlock_objects{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.serverDescr{
+    max-width: 450px;
+}
+
+.serverDescr_img{
+    width: 100%;
+}
+
+.table{
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    max-width: 250px;
+    max-height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.serverIcon{
+    width: 20px;
+}
+
+.online{
+    display: flex;
+}
+
+/* newsBlock */
+.newsBlock{
+    /* background-image: url(main_bg.png   );
+    background-repeat: no-repeat;
+    background-position: center center; */
+    min-height: 100vh;
+
+}
+
+
+.itemDescription{
+    position: absolute;
+    bottom: 1%;
+    width: 72%;
+    height: 35%;
+    left: 14%;
+    right: 14%;
+    background: rgba(96, 95, 95, 0.618);
+    padding: 10px;
+
+}
+
+.newsBlock .btn{
+    display: inline-block;
+    cursor: pointer;
+    font-size:14px;
+    text-decoration:none;
+    padding:10px 17px;
+    color:#ffffff;
+    background:#564f5c;
+    border-radius:7px;
+    border:2px solid #c79f32;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 15px;
+
+}
+.newsBlock .btn:hover{
+    background:#c79f32;
+    color:#ffffff;
+    border:2px solid #564f5c;
+    transition: all 0.2s ease;
+}
+
+/* aboutBLock */
+.aboutBLock{
+    /* background-image: url(main_bg.png   );
+    background-repeat: no-repeat;
+    background-position: center center; */
+    /*min-height: 85vh;*/
+    padding-bottom: 250px;
+}
+
+.aboutBLock .items{
+    padding-top: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.aboutBLock img{
+    height: 150px;
+}
+
+.aboutBLock .item .text{
+    padding-top: 30px;
+    font-size: 25px;
+}
+
+.aboutBLock .item{
+    text-align: center;
+}
+
+/* footer */
+footer{
+    background: rgba(20, 20, 20, 1);
+    height: 300px;
+    padding-top: 50px;
+}
+
+footer .wrapper{
+    display: flex;
+    justify-content: space-around;
+}
+ .developers, .projects {
+    display: flex;
+    flex-direction: column;
+}
+
+.company{
+
+    align-items: center;
+    justify-self: center;
+}
+.developers .text{
+    white-space: nowrap;
+    font-size: 20px;
+}
+.developers .name{
+    padding-top: 10px;
+}
+.LowPixel{
+    width: 250px;
+}
+
+.DM{
+    padding-top: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+    .projects{
+        display: none;
+    }
+}
+
+.aboutBLock .items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navbar-collapse{
+    background: var(--bs-dark);
+    padding: 10px;
+}
+
+.carousel-item img{
+    object-fit: cover;
+}
+
+.itemDescription *{
+    color: white!important;
+}
+.itemDescription{
+    -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))!important;
+}
+/* NEWS */

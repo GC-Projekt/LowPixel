@@ -19,8 +19,8 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
         Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
         Route::post('/login', [AuthController::class, 'login'])->name('signin');
-        Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
-        Route::post('/register', [AuthController::class, 'register'])->name('signup');
+//        Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+//        Route::post('/register', [AuthController::class, 'register'])->name('signup');
         Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
     });
@@ -52,6 +52,25 @@ Route::prefix('admin')->namespace('App\Http\Controllers\Admin')
 
     });
 
+Route::get('/rules', function(){
+   return view('pages.rules');
+})->name('rules');
+
+Route::get('/news', function(){
+    return view('pages.news', [
+        'posts' => \App\Models\Post::all()
+    ]);
+})->name('news');
+
+Route::get('/news/{post}', function(\App\Models\Post $post){
+   return view('pages.post', [
+       'post' => $post
+   ]);
+});
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'data' => \App\Services\MinecraftStatisticsService::getStats(),
+        'posts' => \App\Models\Post::all()->take(3)
+    ]);
 })->name('main');

@@ -15,6 +15,9 @@ class User extends Authenticatable
     const ROLE_ADMIN = 0;
     const ROLE_READER = 1;
 
+    protected $table = 'authme';
+
+
     public static function getRoles()
     {
         return [
@@ -23,17 +26,6 @@ class User extends Authenticatable
         ];
     }
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'role',
-    ];
 
     /**
      * The attributes that should be hidden for serialization.

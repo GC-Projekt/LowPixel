@@ -3,8 +3,10 @@
 namespace App\Http\Middleware;
 
 use App\Models\User;
+use App\Services\RolesService;
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class AdminMiddleware
@@ -16,10 +18,14 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ((int) auth()->user()->role !== User::ROLE_ADMIN) {
-            abort(404);
+        if (!Auth::check()){
+            abort(403);
         }
-
-        return $next($request);
+        $roles = RolesService::getRoles(auth()->user()->username);
+        if (in_array("group.admin", $roles)){
+            return $next($request);
+        }else{
+            abort(403);
+        }
     }
 }
